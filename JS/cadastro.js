@@ -7,10 +7,10 @@ function showHidePassword(inputId, iconElement) {
 
     if (isPassword) {
         input.type = 'text';
-        iconElement.style.backgroundImage = "url('hide.png')";
+        iconElement.style.backgroundImage = "url('images/hide.png')";
     } else {
         input.type = 'password';
-        iconElement.style.backgroundImage = "url('show.png')";
+        iconElement.style.backgroundImage = "url('images/show.png')";
     }
 }
 
@@ -123,10 +123,15 @@ formD.addEventListener('submit', event => {
         senhaConfirmError.textContent = ''; 
     }
 
+    if (!isPasswordValid(senha)) {
+        senhaConfirmInput.style.border = '2px solid #e63636';
+        senhaConfirmError.textContent = 'A senha não atende aos requisitos';
+        
+        return;
+    }
+
     let users = JSON.parse(localStorage.getItem('users')) || [];
-
     users.push(data);
-
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Cadastro realizado com sucesso!");
