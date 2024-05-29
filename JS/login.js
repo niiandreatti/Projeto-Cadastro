@@ -6,10 +6,10 @@ function showHidePassword(inputId, iconElement) {
 
     if (isPassword) {
         input.type = 'text';
-        iconElement.style.backgroundImage = "url('hide.png')";
+        iconElement.style.backgroundImage = "url('images/hide.png')" ;
     } else {
         input.type = 'password';
-        iconElement.style.backgroundImage = "url('show.png')";
+        iconElement.style.backgroundImage ="url('images/show.png')";
     }
 }
 loginForm.addEventListener('submit', event => {
