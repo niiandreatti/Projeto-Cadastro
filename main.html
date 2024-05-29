@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-button">
+        <a href="login.html">Voltar</a>
+    </div>
+    <div class="conteiner">
+        <div class="form-conteiner">
+            <div class="header">
+                <h2 id="header">Cadastro</h2>
+            </div>
+            <form action="" class="form" id="form">
+                <label for="username">Digite seu nome</label>
+                <input type="text" id="nome-input" name="username" placeholder="Digite seu nome" required/> 
+                <label for="email">Digite seu email</label>
+                <input type="text" id="email-input" name="email" placeholder="Digite seu email" required/> 
+                <label for="password">Digite sua senha</label>
+                <div class="input-container">
+                    <input type="password" id="senha-input" name="password" placeholder="Digite sua senha" required/>
+                    <div class="icon" onclick="showHidePassword('senha-input', this)"></div>
+                    <div id="password-error" class="error-message">
+                        <p id="length-requirement" class="requirement">* A senha deve conter no mínimo 8 caracteres.</p>
+                        <p id="uppercase-requirement" class="requirement">* A senha deve conter pelo menos uma letra maiúscula.</p>
+                        <p id="lowercase-requirement" class="requirement">* A senha deve conter pelo menos uma letra minúscula.</p>
+                        <p id="number-requirement" class="requirement">* A senha deve conter pelo menos um número.</p>
+                        <p id="symbol-requirement" class="requirement">* A senha deve conter pelo menos um símbolo.</p>
+                        <span id="match-password">Sua senha é ...</span>
+                    </div>
+                    
+                </div>
+                <label for="password-confirm">Confirme sua senha</label>
+                <div class="input-container">
+                    <input type="password" id="senha-confirm-input" name="password-confirm" placeholder="Confirme sua senha" required/>
+                    <div class="icon" onclick="showHidePassword('senha-confirm-input', this)"></div>
+                </div>
+                <p id="senha-confirm-error"></p>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script src="cadastro.js"></script>
+</body>
+</html>
